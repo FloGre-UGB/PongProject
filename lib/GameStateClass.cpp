@@ -1,41 +1,12 @@
 #include "GameStateClass.hpp"
 #include <cstdlib>
 
-
-
-Racket::Racket(int v_pos, int h_pos){
-    vertical_pos = v_pos;
-    horizontal_pos = h_pos;
-    racket_width = 10;
-    racket_length = 100;
-}
-
-void Racket::moveUp(){
-    vertical_pos = vertical_pos - 5;
-}
-void Racket::moveDown(){
-    vertical_pos = vertical_pos + 5;
-}
-
-Ball::Ball(int vert_pos, int hor_pos, int vert_speed, int hor_speed){
-    v_pos = vert_pos;
-    h_pos = hor_pos;
-    v_speed = vert_speed;
-    h_speed = hor_speed;
-    width = 10;
-    height = 10; 
-}
-
-void Ball::moveBall(unsigned int timedelta){
-    v_pos = v_pos + timedelta * v_speed;
-    h_pos = h_pos + timedelta * h_speed;
-}
-
 GameState::GameState(int v_pos_l/*=360*/,  int h_pos_l/*=10*/, 
         int v_pos_r/*=360*/,  int h_pos_r/*=710*/, 
         int v_pos_ball/*=360*/,  int h_pos_ball/*=360*/,
         int v_speed_ball/*=-1*/, int h_speed_ball/*=-1*/,
-        unsigned short points_l, unsigned short points_r){
+        unsigned short points_l, unsigned short points_r,
+        unsigned int s_width, unsigned int s_height){
 
         // make left racket at position: (v_pos_l, h_pos_l)
         left = Racket(v_pos_l, h_pos_l);
@@ -48,4 +19,43 @@ GameState::GameState(int v_pos_l/*=360*/,  int h_pos_l/*=10*/,
         // current score
         points_left = points_l;
         points_right = points_r; 
+
+        //
+        screen_height = s_height;
+        screen_width = s_width;
+}
+
+
+void GameState::checkCollision(){
+    // check for collision with rackets
+    if (left.checkCollision(&ball)){
+        ball.setSpeed(ball.v_speed, ball.h_speed *(-1));
+    }
+    else if (right.checkCollision(&ball)){
+        ball.setSpeed(ball.v_speed, ball.h_speed *(-1));    }
+    // check for collision with walls
+    else if (ball.h_pos > 0 && ball.h_pos < (int) screen_width &&
+            (ball.v_pos <=0 || ball.v_pos >= (int) screen_height)) {
+        ball.setSpeed(ball.v_speed * (-1), ball.h_speed);
+    }
+}
+
+bool GameState::checkForPoint(){
+    // right player makes a point:
+    if (ball.h_pos + 2*ball.width < 0){
+        points_right++;
+        return true;
+    }
+    // left player makes a point:
+    else if (ball.h_pos > (int) screen_width){
+        points_left++;
+        return true; 
+    }
+    else{
+        return false;
+    }
+}
+
+void GameState::resetBall(){
+    ball = Ball(screen_height/2, screen_width/2,1,1);
 }

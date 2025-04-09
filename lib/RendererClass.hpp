@@ -7,10 +7,11 @@
 struct Renderer{
     SDL_Window * window;
     SDL_Renderer * renderer;
+    unsigned int screen_width;
+    unsigned int screen_height;
 
     // the game has three rectangles: the two rackets and the ball
-    //std::vector<SDL_Rect> rectangles;
-
+    
     // Constructor 
     //Renderer(SDL_Window * w, GameState * state);
     Renderer(SDL_Window * w);
