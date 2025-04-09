@@ -34,8 +34,6 @@ void App::setSpeed(unsigned int newSpeed){
 
 
 void App::run(){
-    Uint32 startTime = SDL_GetTicks();
-
     running = true;
     bool doQuit = false;
 
@@ -58,7 +56,7 @@ void App::run(){
         screen_width, screen_height);
 
     // instantiate a renderer 
-    Renderer renderer = Renderer(window);
+    Renderer renderer = Renderer(window, &state);
 
     // instantiate a keyboard handler
     KeyboardHandler keyHandler = KeyboardHandler(); 
@@ -67,7 +65,8 @@ void App::run(){
     renderer.draw(&state);
 
     Uint32 timestampLoopBegin;
-    Uint32 timGameIsRunning;
+    Uint32 timeLastPointEnded = 0; // tracks the time at which a point ends (ball leaves field)
+    Uint32 timePointIsRunning;
     unsigned int newSpeed = 1; 
     // game loop:
     while(running){
@@ -75,10 +74,10 @@ void App::run(){
         timestampLoopBegin = SDL_GetTicks();
 
         // determine how long the game's been running 
-        timGameIsRunning = timestampLoopBegin - startTime; 
+        timePointIsRunning = timestampLoopBegin - timeLastPointEnded; 
 
         // increase game speed every ten seconds 
-        newSpeed = 1 + timGameIsRunning / 10000;
+        newSpeed = 1 + timePointIsRunning / 10000;
         // increase game speed
         setSpeed(newSpeed);
 
@@ -106,6 +105,7 @@ void App::run(){
             // wait before resetting the ball
             SDL_Delay(500);
             state.resetBall();
+            timeLastPointEnded = SDL_GetTicks();
         }
 
         // render the game state
