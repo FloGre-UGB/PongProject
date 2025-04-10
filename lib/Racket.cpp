@@ -8,10 +8,13 @@ Racket::Racket(int v_pos, int h_pos){
 }
 
 void Racket::moveUp(unsigned int gameSpeed){
-    vertical_pos = vertical_pos - 5 * gameSpeed;
+    if (this->vertical_pos >= 0){
+        vertical_pos = vertical_pos - 5 * gameSpeed;
+    }
 }
-void Racket::moveDown(unsigned int gameSpeed){
-    vertical_pos = vertical_pos + 5 * gameSpeed;
+void Racket::moveDown(unsigned int gameSpeed, const int screenHeight){
+    if (this->vertical_pos <= screenHeight - this->racket_length)
+        vertical_pos = vertical_pos + 5 * gameSpeed;
 }
 
 bool Racket::checkCollision(Ball * ball){

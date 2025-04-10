@@ -14,12 +14,12 @@ void KeyboardHandler::handleKeyboardStates(bool* doQuit, GameState* state, const
         state->right.moveUp(gameSpeed);
     }
     if (keyboardStates[SDL_SCANCODE_DOWN]){
-        state->right.moveDown(gameSpeed);
+        state->right.moveDown(gameSpeed, state->screen_height);
     }
     if (keyboardStates[SDL_SCANCODE_W]){
         state->left.moveUp(gameSpeed);
     }
     if (keyboardStates[SDL_SCANCODE_S]){
-        state->left.moveDown(gameSpeed);
+        state->left.moveDown(gameSpeed, state->screen_height);
     }
 }

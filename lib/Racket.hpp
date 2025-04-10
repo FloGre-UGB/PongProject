@@ -19,7 +19,7 @@ struct Racket{
     void moveUp(unsigned int gameSpeed=1);
 
     //Function that move the racket upwards
-    void moveDown(unsigned int gameSpeed=1);
+    void moveDown(unsigned int gameSpeed=1, const int screenHeight=720);
 
     // Function that checks for collision with ball
     bool checkCollision(Ball * ball);

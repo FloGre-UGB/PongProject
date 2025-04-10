@@ -11,15 +11,15 @@ struct Renderer{
     SDL_Renderer * renderer;
     unsigned int screen_width;
     unsigned int screen_height;
+
+    // the game has three rectangles: the two rackets and the ball
     RacketRect leftRacket;
     RacketRect rightRacket; 
     BallRect ball; 
 
     // SDL_Surface* surfaceMessage;
     // SDL_Texture* Message;
-    
-    // the game has three rectangles: the two rackets and the ball
-    
+        
     // Constructor 
     Renderer(SDL_Window * w, GameState * state);
     //Renderer(SDL_Window * w);
