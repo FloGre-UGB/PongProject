@@ -56,7 +56,7 @@ void App::run(){
         screen_width, screen_height);
 
     // instantiate a renderer 
-    Renderer renderer = Renderer(window);
+    Renderer renderer = Renderer(window, &state);
 
     // instantiate a keyboard handler
     KeyboardHandler keyHandler = KeyboardHandler(); 

@@ -14,3 +14,8 @@ void RacketRect::parseToRenderer(SDL_Renderer * renderer){
     SDL_RenderFillRect(renderer, &(this->rect));
 }
 
+void RacketRect::updateAndParse(Racket* racket, SDL_Renderer * renderer){
+    this->updatePosition(racket);
+    this->parseToRenderer(renderer);
+}
+

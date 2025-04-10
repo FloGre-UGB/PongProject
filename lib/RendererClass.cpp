@@ -5,11 +5,15 @@
 #include <iostream>
 #include <filesystem>
 
-Renderer::Renderer(SDL_Window * w){
+Renderer::Renderer(SDL_Window * w, GameState * state){
     window = w; 
     renderer = SDL_CreateRenderer(window , -1, SDL_RENDERER_ACCELERATED);
     // set screen width and screen height
     SDL_GetWindowSize(window, (int*) &screen_width, (int*) &screen_height);
+    
+    leftRacket = RacketRect(&(state->left));
+    rightRacket = RacketRect(&(state->right));
+    ball = BallRect(&(state->ball));
 }   
 
 void Renderer::draw(GameState * state){
@@ -49,33 +53,37 @@ void Renderer::draw(GameState * state){
     SDL_DestroyTexture(Message);
     */
 
-    // make rectangles to draw the rackets
-    SDL_Rect lRacket = SDL_Rect{state->left.horizontal_pos,
-        state->left.vertical_pos,
-        state->left.racket_width,
-        state->left.racket_length
-        };
-        
-    SDL_Rect rRacket = SDL_Rect{state->right.horizontal_pos,
-            state->right.vertical_pos,
-            state->right.racket_width,
-            state->right.racket_length
-        };
+    // draw the ball in yellow
+    SDL_SetRenderDrawColor(renderer , 255, 255, 0, 0);
 
+
+    // draw the ball
+    ball.updateAndParse(&(state->ball), this->renderer);
+
+
+    /*
     // make rectangle to draw the ball 
     SDL_Rect ball = SDL_Rect{state->ball.h_pos, state->ball.v_pos,
         state->ball.width, state->ball.height
         };
 
-    std::vector<SDL_Rect> rectangles = {lRacket, rRacket, ball}; 
-    
+    //std::vector<SDL_Rect> rectangles = {lRacket, rRacket, ball}; 
+    std::vector<SDL_Rect> rectangles ={ball};
+
     // draw the rectangles using white
-    SDL_SetRenderDrawColor (renderer , 255, 255, 255, 0);
+    SDL_SetRenderDrawColor(renderer , 255, 255, 255, 0);
     for (SDL_Rect r:rectangles){
         
         SDL_RenderFillRect(renderer, &r);
     }
+    */
+    
+    // Draw the rackets white
+    SDL_SetRenderDrawColor(renderer , 255, 255, 255, 0);
 
+    // update positions of the rackets
+    leftRacket.updateAndParse(&(state->left),this->renderer);
+    rightRacket.updateAndParse(&(state->right),this->renderer);
 
     // Displaying the new frame
     SDL_RenderPresent(renderer);
