@@ -24,6 +24,7 @@ Ball::Ball(int vert_pos, int hor_pos){
     height = 10; 
     v_pos = vert_pos;
     h_pos = hor_pos;
+    
     // initial movement of the ball: random direction 
     // -> generate random numbers for this
     float arr[] = {-1,1, 0};

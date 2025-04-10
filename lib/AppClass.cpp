@@ -56,7 +56,7 @@ void App::run(){
         screen_width, screen_height);
 
     // instantiate a renderer 
-    Renderer renderer = Renderer(window, &state);
+    Renderer renderer = Renderer(window);
 
     // instantiate a keyboard handler
     KeyboardHandler keyHandler = KeyboardHandler(); 
@@ -100,6 +100,7 @@ void App::run(){
         
         // check whether ball collides with racket
         state.checkCollision();
+        
         // check whether someone scored
         if (state.checkForPoint()){
             // wait before resetting the ball
