@@ -28,7 +28,7 @@ App::App(const unsigned int width,const unsigned int height){
 
 }
 
-void App::setSpeed(unsigned int newSpeed){
+void App::setSpeed(const unsigned int newSpeed){
     gameSpeed = newSpeed;
 }
 
@@ -50,8 +50,8 @@ void App::run(){
 
 
     // instantiate a GameState Object
-    GameState state  = GameState(screen_height/2, 50 ,
-        screen_height/2, screen_width-50, screen_height/2, 
+    GameState state  = GameState(screen_height/2, screen_width/10 ,
+        screen_height/2, screen_width-screen_width/10, screen_height/2, 
         screen_height/2, vert_speed, hor_speed, 0, 0,
         screen_width, screen_height);
 
@@ -60,6 +60,9 @@ void App::run(){
 
     // instantiate a keyboard handler
     KeyboardHandler keyHandler = KeyboardHandler(); 
+
+    // draw the startscreen
+    renderer.drawStartscreen(); 
 
     // draw the initial game state
     renderer.draw(&state);

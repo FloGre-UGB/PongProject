@@ -5,15 +5,15 @@ BallRect::BallRect(Ball* ball){
         ball->width, ball->height}; 
 }
 
-void BallRect::updatePosition(Ball * ball){
+void BallRect::updatePosition(const Ball * ball){
     rect.x = ball->h_pos;
     rect.y = ball->v_pos;
 }
-void BallRect::parseToRenderer(SDL_Renderer * renderer){
+void BallRect::parseToRenderer(SDL_Renderer * renderer) const{
     SDL_RenderFillRect(renderer, &(this->rect));
 }
 
-void BallRect::updateAndParse(Ball * ball, SDL_Renderer * renderer){
+void BallRect::updateAndParse(const Ball * ball, SDL_Renderer * renderer){
     this->updatePosition(ball);
     this->parseToRenderer(renderer);
 }

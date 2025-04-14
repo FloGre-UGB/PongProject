@@ -18,7 +18,7 @@ struct Ball{
 
     Ball(int vert_pos, int hor_pos); 
 
-    void moveBall(unsigned int gameSpeed);
+    void moveBall(const unsigned int gameSpeed);
 
     void setSpeed(const int vert_speed, const int hor_speed);
 };

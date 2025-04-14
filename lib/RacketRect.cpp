@@ -10,7 +10,7 @@ void RacketRect::updatePosition(Racket* racket){
     rect.y = racket->vertical_pos;
 }
 
-void RacketRect::parseToRenderer(SDL_Renderer * renderer){
+void RacketRect::parseToRenderer(SDL_Renderer * renderer) const{
     SDL_RenderFillRect(renderer, &(this->rect));
 }
 

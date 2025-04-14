@@ -21,7 +21,13 @@ struct Racket{
     //Function that move the racket upwards
     void moveDown(unsigned int gameSpeed=1, const int screenHeight=720);
 
+    // Function that moves the racket to the right
+    void moveRight(unsigned int gameSpeed=1, const int screenWidth=720, const bool left=true);
+    // Function that moves the racket to the left
+    void moveLeft(unsigned int gameSpeed=1, const int screenWidth=720, const bool left=true);
+
+
     // Function that checks for collision with ball
-    bool checkCollision(Ball * ball);
+    bool checkCollision(Ball * ball, bool left);
     
 };

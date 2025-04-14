@@ -17,6 +17,7 @@ struct ScoreboardRect{
     SDL_Surface * scoreSurface; 
     SDL_Texture * scoreTexture; 
 
+    ScoreboardRect() = default; 
 
     ScoreboardRect(int vert_pos, int hor_pos, int h, int w, unsigned short points,
         Uint8 r, Uint8 g, Uint8 b, Uint8 a, SDL_Renderer* renderer, TTF_Font* font);

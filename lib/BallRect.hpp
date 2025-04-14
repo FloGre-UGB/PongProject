@@ -11,10 +11,10 @@ struct BallRect
 
 
     // methods:
-    void updatePosition(Ball* ball);
+    void updatePosition(const Ball* ball);
 
-    void parseToRenderer(SDL_Renderer * renderer);
+    void parseToRenderer(SDL_Renderer * renderer) const;
 
-    void updateAndParse(Ball* ball, SDL_Renderer* renderer);
+    void updateAndParse(const Ball* ball, SDL_Renderer* renderer);
 };
 

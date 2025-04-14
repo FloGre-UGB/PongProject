@@ -22,4 +22,19 @@ void KeyboardHandler::handleKeyboardStates(bool* doQuit, GameState* state, const
     if (keyboardStates[SDL_SCANCODE_S]){
         state->left.moveDown(gameSpeed, state->screen_height);
     }
+    /*
+    if (keyboardStates[SDL_SCANCODE_RIGHT]){
+        state->right.moveRight(gameSpeed, state->screen_width, false);
+    }
+    if (keyboardStates[SDL_SCANCODE_LEFT]){
+        state->right.moveLeft(gameSpeed, state->screen_width, false);
+    }
+    if (keyboardStates[SDL_SCANCODE_A]){
+        state->left.moveLeft(gameSpeed, state->screen_width, true);
+    }
+    if (keyboardStates[SDL_SCANCODE_D]){
+        state->left.moveLeft(gameSpeed, state->screen_width, true);
+    }
+    */
+       
 }

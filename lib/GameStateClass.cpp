@@ -28,10 +28,10 @@ GameState::GameState(int v_pos_l/*=360*/,  int h_pos_l/*=10*/,
 
 void GameState::checkCollision(){
     // check for collision with rackets
-    if (left.checkCollision(&ball)){
+    if (left.checkCollision(&ball, true)){
         ball.setSpeed(ball.v_speed, ball.h_speed *(-1));
     }
-    else if (right.checkCollision(&ball)){
+    else if (right.checkCollision(&ball, false)){
         ball.setSpeed(ball.v_speed, ball.h_speed *(-1));    }
     // check for collision with walls
     else if (ball.h_pos > 0 && ball.h_pos < (int) screen_width &&

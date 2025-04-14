@@ -3,6 +3,9 @@
 #include "GameStateClass.hpp"
 #include "RacketRect.hpp"
 #include "BallRect.hpp"
+#include "ScoreboardRect.hpp"
+#include "Middleline.hpp"
+#include "Startscreen.hpp"
 #include <vector>
 
 
@@ -17,9 +20,17 @@ struct Renderer{
     RacketRect rightRacket; 
     BallRect ball; 
 
-    // SDL_Surface* surfaceMessage;
-    // SDL_Texture* Message;
-        
+
+    // the scoreboard:
+    ScoreboardRect* leftScoreboard; 
+    ScoreboardRect* rightScoreboard; 
+    
+    //the startscreen
+    Startscreen* start; 
+
+    // middle line that separates the players:
+    Middleline middleLine; 
+
     // Constructor 
     Renderer(SDL_Window * w, GameState * state);
     //Renderer(SDL_Window * w);
@@ -29,4 +40,6 @@ struct Renderer{
 
 
     void draw(GameState * state);
+
+    void drawStartscreen(); 
 };

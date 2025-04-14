@@ -13,7 +13,11 @@ ScoreboardRect::ScoreboardRect(int vert_pos, int hor_pos, int h, int w, unsigned
     points_displayed = std::to_string(points);
 
     // make surface 
-    scoreSurface = TTF_RenderText_Solid(Font, points_displayed.c_str(), Col); 
+    //scoreSurface = TTF_RenderText_Solid(Font, points_displayed.c_str(), Col); 
+    scoreSurface = TTF_RenderUTF8_Solid(Font, points_displayed.c_str(), Col);
+    if (scoreSurface == NULL){
+        std::cout << "Surface creation did not work" << std::endl;
+    }
     // make texture
     scoreTexture = SDL_CreateTextureFromSurface(renderer, scoreSurface);  
     if (scoreTexture == NULL){
