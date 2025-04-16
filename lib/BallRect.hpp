@@ -7,14 +7,14 @@ struct BallRect
     SDL_Rect rect; 
     // Constructors:
     BallRect() = default;
-    BallRect(Ball * ball);
+    BallRect(const Ball* const ball);
 
 
     // methods:
-    void updatePosition(const Ball* ball);
+    void updatePosition(const Ball* const ball);
 
     void parseToRenderer(SDL_Renderer * renderer) const;
 
-    void updateAndParse(const Ball* ball, SDL_Renderer* renderer);
+    void updateAndParse(const Ball* const ball, SDL_Renderer* renderer);
 };
 

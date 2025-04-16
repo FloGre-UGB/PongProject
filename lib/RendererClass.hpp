@@ -32,14 +32,13 @@ struct Renderer{
     Middleline middleLine; 
 
     // Constructor 
-    Renderer(SDL_Window * w, GameState * state);
-    //Renderer(SDL_Window * w);
+    Renderer(SDL_Window * w, const GameState* const state);
 
     // Destructor 
     ~Renderer() = default;
 
 
-    void draw(GameState * state);
+    void draw(const GameState* const state);
 
     void drawStartscreen(); 
 };

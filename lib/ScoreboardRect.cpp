@@ -1,7 +1,7 @@
 #include "ScoreboardRect.hpp"
 
-ScoreboardRect::ScoreboardRect(int vert_pos, int hor_pos, int h, int w, unsigned short points,
-    Uint8 r, Uint8 g, Uint8 b, Uint8 a, SDL_Renderer* renderer, TTF_Font* font){
+ScoreboardRect::ScoreboardRect(const int vert_pos, const int hor_pos, const int h, const int w, const unsigned short points,
+    const Uint8 r, const Uint8 g, const Uint8 b, const Uint8 a, SDL_Renderer* renderer, TTF_Font* const font){
     Font = font; 
 
     // set text color
@@ -32,7 +32,7 @@ ScoreboardRect::~ScoreboardRect(){
     
 }
 
-void ScoreboardRect::setScore(unsigned short points){
+void ScoreboardRect::setScore(const unsigned short points){
     points_displayed = std::to_string(points); 
 }
 
@@ -47,7 +47,7 @@ void ScoreboardRect::updateTexture(SDL_Renderer* renderer){
     }
 }
 
-void ScoreboardRect::updateScoreboard(unsigned short points, SDL_Renderer* renderer){
+void ScoreboardRect::updateScoreboard(const unsigned short points, SDL_Renderer* renderer){
     this->setScore(points);
     this->updateTexture(renderer);
 }

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <filesystem>
 
-Renderer::Renderer(SDL_Window * w, GameState * state){
+Renderer::Renderer(SDL_Window * w, const GameState* const state){
     window = w; 
     renderer = SDL_CreateRenderer(window , -1, SDL_RENDERER_ACCELERATED);
     // set screen width and screen height
@@ -45,7 +45,7 @@ Renderer::Renderer(SDL_Window * w, GameState * state){
     
 }   
 
-void Renderer::draw(GameState * state){
+void Renderer::draw(const GameState* const state){
     // Drawing the background
     SDL_SetRenderDrawColor(renderer , 0, 0, 0, 0);
     SDL_RenderClear(renderer);

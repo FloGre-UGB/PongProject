@@ -28,7 +28,6 @@ Ball::Ball(int vert_pos, int hor_pos){
     // initial movement of the ball: random direction 
     // -> generate random numbers for this
     const float arr[] = {-1,1, -2, 2};
-    //srand (time(NULL));
     unsigned short rand_num;
 
     rand_num = rand() % 2;

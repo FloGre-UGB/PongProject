@@ -6,12 +6,12 @@ struct RacketRect{
     SDL_Rect rect; 
     // Constructors:
     RacketRect() = default; 
-    RacketRect(Racket* racket);
+    RacketRect(const Racket* const racket);
 
     //methods:
-    void updatePosition(Racket* racket);
+    void updatePosition(const Racket* const racket);
 
     void parseToRenderer(SDL_Renderer * renderer) const;
 
-    void updateAndParse(Racket* racket, SDL_Renderer* renderer);
+    void updateAndParse(const Racket* const racket, SDL_Renderer* renderer);
 };

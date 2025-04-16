@@ -39,13 +39,13 @@ void App::run(){
 
     // initial movement of the ball: random direction 
     // -> generate random numbers for this
-    float arr[] = {-1,1, 0};
+    float arr[] = {-1,1, -2,2};
     srand (time(NULL));
     unsigned short rand_num;
 
     rand_num = rand() % 2;
     float hor_speed = arr[rand_num];
-    rand_num = rand() % 3;
+    rand_num = rand() % 4;
     float vert_speed = arr[rand_num];
 
 
@@ -65,7 +65,7 @@ void App::run(){
     renderer.drawStartscreen(); 
 
     // draw the initial game state
-    renderer.draw(&state);
+    //renderer.draw(&state);
 
     Uint32 timestampLoopBegin;
     Uint32 timeLastPointEnded = 0; // tracks the time at which a point ends (ball leaves field)
@@ -108,8 +108,10 @@ void App::run(){
         if (state.checkForPoint()){
             // wait before resetting the ball
             SDL_Delay(500);
-            state.resetBall();
+
             timeLastPointEnded = SDL_GetTicks();
+            //reset the ball 
+            state.resetBall();
         }
 
         // render the game state

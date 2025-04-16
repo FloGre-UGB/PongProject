@@ -19,15 +19,15 @@ struct ScoreboardRect{
 
     ScoreboardRect() = default; 
 
-    ScoreboardRect(int vert_pos, int hor_pos, int h, int w, unsigned short points,
-        Uint8 r, Uint8 g, Uint8 b, Uint8 a, SDL_Renderer* renderer, TTF_Font* font);
+    ScoreboardRect(const int vert_pos, const int hor_pos, const int h, const int w, const unsigned short points,
+        const Uint8 r, const Uint8 g, const Uint8 b, const Uint8 a, SDL_Renderer* renderer, TTF_Font* const font);
 
     ~ScoreboardRect();
     
-    void setScore(unsigned short points);
+    void setScore(const unsigned short points);
 
     void updateTexture(SDL_Renderer* renderer);
     
-    void updateScoreboard(unsigned short points, SDL_Renderer* renderer);
+    void updateScoreboard(const unsigned short points, SDL_Renderer* renderer);
 
 };
