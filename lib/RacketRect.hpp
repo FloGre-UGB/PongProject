@@ -3,15 +3,20 @@
 #include "Racket.hpp"
 
 struct RacketRect{
-    SDL_Rect rect; 
-    // Constructors:
-    RacketRect() = default; 
-    RacketRect(const Racket* const racket);
+    private:
+        SDL_Rect rect; 
+    
+    public:
+        // Constructors:
+        RacketRect() = default; 
+        RacketRect(const Racket* const racket);
 
-    //methods:
-    void updatePosition(const Racket* const racket);
+        //methods:
+        void updatePosition(const Racket* const racket);
 
-    void parseToRenderer(SDL_Renderer * renderer) const;
+        void parseToRenderer(SDL_Renderer * renderer) const;
 
-    void updateAndParse(const Racket* const racket, SDL_Renderer* renderer);
+        void updateAndParse(const Racket* const racket, SDL_Renderer* renderer);
+
+        const SDL_Rect* getRect() const;
 };

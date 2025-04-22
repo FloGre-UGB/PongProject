@@ -1,16 +1,18 @@
 #pragma once 
 #include "Racket.hpp"
 #include "Ball.hpp"
+#include "SoundEffect.hpp"
 
 
 struct GameState{
-    Racket left;
-    Racket right; 
+    
     unsigned short points_left; 
     unsigned short points_right;
     unsigned int screen_width;
     unsigned int screen_height;
-
+    
+    Racket left;
+    Racket right; 
     Ball ball; 
 
     // Constructor:
@@ -22,7 +24,8 @@ struct GameState{
                 unsigned int s_width=720, unsigned int s_height=720);
     
     // check for collision of one of the of the rackets and ball or the boundary walls and the ball
-    void checkCollision(); 
+    // the function then resets the speed of the ball. The cut variable allows to give the ball a cut by a moving racket
+    void checkCollision(int cut = 0, SoundEffect* bounce=nullptr); 
 
     // check whether ball is out and whos made a point
     bool checkForPoint();

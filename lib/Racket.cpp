@@ -36,18 +36,18 @@ void Racket::moveLeft(unsigned int gameSpeed, const int screenWidth, const bool 
 bool Racket::checkCollision(Ball * ball, bool left){
     if ((
         (left == true) 
-        && (vertical_pos + racket_length >= ball->v_pos + ball->height) && (vertical_pos <= ball->v_pos) 
+        && (vertical_pos + racket_length >= ball->getVPos() + ball->getHeight()) && (vertical_pos <= ball->getVPos()) 
         && (
-            (horizontal_pos + racket_width >= ball->h_pos) 
-            && (horizontal_pos <= ball->h_pos)
+            (horizontal_pos + racket_width >= ball->getHPos()) 
+            && (horizontal_pos <= ball->getHPos())
         ))
         ||
         (
         (left == false) 
-        && (vertical_pos + racket_length >= ball->v_pos + ball->height) && (vertical_pos <= ball->v_pos) 
+        && (vertical_pos + racket_length >= ball->getVPos() + ball->getHeight()) && (vertical_pos <= ball->getVPos()) 
         && (
-            (horizontal_pos <= ball->h_pos + ball->width)
-            && (horizontal_pos + racket_width >= ball->h_pos + ball->width)
+            (horizontal_pos <= ball->getHPos() + ball->getWidth())
+            && (horizontal_pos + racket_width >= ball->getHPos() + ball->getWidth())
 
         ))
     ){
@@ -58,3 +58,17 @@ bool Racket::checkCollision(Ball * ball, bool left){
     }
 
 }
+
+int Racket::getVertcialPos() const{
+    return vertical_pos;
+}
+int Racket::getHorPos() const{
+    return horizontal_pos;
+}
+int Racket::getWidth() const{
+    return racket_width;
+}
+int Racket::getHeight() const{
+    return racket_length;
+}
+

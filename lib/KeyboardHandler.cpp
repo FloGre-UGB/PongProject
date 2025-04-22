@@ -6,22 +6,38 @@ void KeyboardHandler::fetchKeyboardStates(){
 
 void KeyboardHandler::handleKeyboardStates(bool* doQuit, GameState* state, const unsigned int gameSpeed){
     // check for Escape 
+    bool checkUpCollision = false;
+    bool checkDownCollision = false; 
     if (keyboardStates[SDL_SCANCODE_ESCAPE]){
         *doQuit = true; 
     }
     // Check for movement commands 
     if (keyboardStates[SDL_SCANCODE_UP]){
         state->right.moveUp(gameSpeed);
+        checkUpCollision = true;
     }
     if (keyboardStates[SDL_SCANCODE_DOWN]){
         state->right.moveDown(gameSpeed, state->screen_height);
+        checkDownCollision = true;
     }
     if (keyboardStates[SDL_SCANCODE_W]){
         state->left.moveUp(gameSpeed);
+        // check for collision with ball and give it a cut if there is a collision
+        checkUpCollision = true;
     }
     if (keyboardStates[SDL_SCANCODE_S]){
         state->left.moveDown(gameSpeed, state->screen_height);
+        checkDownCollision = true; 
     }
+
+    if (checkUpCollision){
+        state->checkCollision(-1);
+    }
+
+    if (checkDownCollision){
+        state->checkCollision(1);
+    }
+
     /*
     if (keyboardStates[SDL_SCANCODE_RIGHT]){
         state->right.moveRight(gameSpeed, state->screen_width, false);

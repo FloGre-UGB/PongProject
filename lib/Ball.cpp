@@ -35,3 +35,27 @@ Ball::Ball(int vert_pos, int hor_pos){
     rand_num = rand() % 4;
     v_speed = arr[rand_num];
 }
+
+int Ball::getHeight() const{
+    return height;
+}
+
+int Ball::getWidth() const{
+    return width;
+}
+
+int Ball::getVSpeed() const{
+    return v_speed;
+}
+
+int Ball::getHSpeed() const{  // Note: name has a typo, see below
+    return h_speed;
+}
+
+int Ball::getVPos() const{
+    return v_pos;
+}
+
+int Ball::getHPos() const{
+    return h_pos;
+}

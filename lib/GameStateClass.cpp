@@ -26,28 +26,36 @@ GameState::GameState(int v_pos_l/*=360*/,  int h_pos_l/*=10*/,
 }
 
 
-void GameState::checkCollision(){
+void GameState::checkCollision(int cut, SoundEffect* bounce){
+    bool collision = false;
     // check for collision with rackets
     if (left.checkCollision(&ball, true)){
-        ball.setSpeed(ball.v_speed, ball.h_speed *(-1));
+        collision = true;
+        ball.setSpeed(ball.getVSpeed() + cut, ball.getHSpeed() * (-1));
     }
     else if (right.checkCollision(&ball, false)){
-        ball.setSpeed(ball.v_speed, ball.h_speed *(-1));    }
+        collision = true;
+        ball.setSpeed(ball.getVSpeed() + cut, ball.getHSpeed() * (-1));
+    }
     // check for collision with walls
-    else if (ball.h_pos > 0 && ball.h_pos < (int) screen_width &&
-            (ball.v_pos <=0 || ball.v_pos >= (int) screen_height)) {
-        ball.setSpeed(ball.v_speed * (-1), ball.h_speed);
+    else if (ball.getHPos() > 0 && ball.getHPos() < (int) screen_width &&
+            (ball.getVPos() <=0 || ball.getVPos() >= (int) screen_height)) {
+        collision = true;
+        ball.setSpeed(ball.getVSpeed() * (-1), ball.getHSpeed());
+    }
+    if (collision == true and bounce!=nullptr){
+        bounce->playEffect(0); 
     }
 }
 
 bool GameState::checkForPoint(){
     // right player makes a point:
-    if (ball.h_pos + 2*ball.width < 0){
+    if (ball.getHPos() + 2*ball.getWidth() < 0){
         points_right++;
         return true;
     }
     // left player makes a point:
-    else if (ball.h_pos > (int) screen_width){
+    else if (ball.getHPos() > (int) screen_width){
         points_left++;
         return true; 
     }

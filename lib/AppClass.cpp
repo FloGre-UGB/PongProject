@@ -2,13 +2,15 @@
 #include "GameStateClass.hpp"
 #include "RendererClass.hpp"
 #include "KeyboardHandler.hpp"
+#include "Music.hpp"
+#include "SoundEffect.hpp"
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <ctime>
 
 App::App(const unsigned int width,const unsigned int height){
-    if ( SDL_InitSubSystem ( SDL_INIT_VIDEO | SDL_INIT_EVENTS )) {
-        std::cout << "Failed SDL_InitSubSystem " << std::endl;
+    if ( SDL_Init ( SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_AUDIO)) {
+        std::cout << "Failed SDL_Init " << std::endl;
         std::exit(1);
     }
     running = false;
@@ -28,6 +30,11 @@ App::App(const unsigned int width,const unsigned int height){
 
 }
 
+App::~App(){
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+}
+
 void App::setSpeed(const unsigned int newSpeed){
     gameSpeed = newSpeed;
 }
@@ -40,6 +47,7 @@ void App::run(){
     // initial movement of the ball: random direction 
     // -> generate random numbers for this
     float arr[] = {-1,1, -2,2};
+
     srand (time(NULL));
     unsigned short rand_num;
 
@@ -61,12 +69,15 @@ void App::run(){
     // instantiate a keyboard handler
     KeyboardHandler keyHandler = KeyboardHandler(); 
 
+    // instantiate a SoundEffect object
+    SoundEffect bounce = SoundEffect("./build/bouncing.wav", 0);
+
+    // instantiate usic object
+    Music music = Music("./build/output.wav", 0);
+    music.playMusic();
     // draw the startscreen
     renderer.drawStartscreen(); 
-
-    // draw the initial game state
-    //renderer.draw(&state);
-
+    
     Uint32 timestampLoopBegin;
     Uint32 timeLastPointEnded = 0; // tracks the time at which a point ends (ball leaves field)
     Uint32 timePointIsRunning;
@@ -85,8 +96,6 @@ void App::run(){
         setSpeed(newSpeed);
 
 
-
-
         SDL_Event event; 
         // event loop
         while (SDL_PollEvent(&event)){
@@ -101,8 +110,8 @@ void App::run(){
         }
         state.ball.moveBall(gameSpeed);
         
-        // check whether ball collides with racket
-        state.checkCollision();
+        // check whether ball collides with racket or wall
+        state.checkCollision(0);
         
         // check whether someone scored
         if (state.checkForPoint()){
@@ -124,10 +133,15 @@ void App::run(){
         }
 
         if (doQuit){
+            running = false;
             break; 
         }
     }
 
+}
+
+SDL_Window * App::getWindow(){
+    return window;
 }
 
 

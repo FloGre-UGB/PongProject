@@ -7,10 +7,9 @@
 
 int main(){
     App app = App(1020, 720);
-    if (app.window == NULL) {
+    if (app.getWindow() == NULL) {
         std :: cout << "Failed SDL_CreateWindow " << std :: endl;
         return -1;
     }
     app.run();
-
 }

@@ -6,33 +6,43 @@
 
 struct Startscreen
 {
-    TTF_Font* titleFont; 
-    TTF_Font* subtitleFont; 
-    SDL_Color Col; 
+    private:
+        int vPosTitle;
+        int hPosTitle;
+        int heightTitle; 
+        int widthTitle;
+        std::string title; 
+        TTF_Font* titleFont; 
+        SDL_Surface * titleSurface; 
 
-    int vPosTitle;
-    int hPosTitle;
-    int heightTitle; 
-    int widthTitle;
-    std::string title; 
-    SDL_Rect titleRect; 
-    SDL_Surface * titleSurface; 
-    SDL_Texture * titleTexture; 
-    
-    int vPosSubtitle;
-    int hPosSubtitle;
-    int heightSubtitle; 
-    int widthSubtitle;
-    std::string subtitle; 
-    SDL_Rect subtitleRect; 
-    SDL_Surface * subtitleSurface;
-    SDL_Texture * subtitleTexture; 
+        int vPosSubtitle;
+        int hPosSubtitle;
+        int heightSubtitle; 
+        int widthSubtitle;
+        std::string subtitle; 
+        TTF_Font* subtitleFont;
+        SDL_Surface * subtitleSurface;
 
-    Startscreen() = default; 
-    Startscreen(const int x, const int y, const int w, const int h, const Uint8 r, const Uint8 g, const Uint8 b, const Uint8 a, SDL_Renderer* renderer, TTF_Font* titleFont, TTF_Font* subtitleFont);
+        SDL_Color Col; 
 
-    ~Startscreen();
+    public:    
+        SDL_Rect titleRect; 
+        SDL_Texture * titleTexture; 
+        
+        SDL_Rect subtitleRect; 
+        SDL_Texture * subtitleTexture; 
 
-    void updateTexture(SDL_Renderer* renderer, const int time);
-    
+        Startscreen() = default; 
+        Startscreen(const int x, const int y, const int w, const int h, 
+            const Uint8 r, const Uint8 g, const Uint8 b, const Uint8 a, 
+            SDL_Renderer* renderer, TTF_Font* titleFont, TTF_Font* subtitleFont);
+
+        Startscreen(const int x, const int y, const int w, const int h, 
+            const Uint8 r, const Uint8 g, const Uint8 b, const Uint8 a, 
+            SDL_Renderer* renderer, const char* titleFontFile, const char* subtitleFontFile);
+        
+        ~Startscreen();
+
+        void updateTexture(SDL_Renderer* renderer, const int time);
+        
 };
