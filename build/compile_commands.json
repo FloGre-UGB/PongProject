@@ -1,0 +1,86 @@
+[
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_AppClass.cpp.o -MF liblibrary.so.p/lib_AppClass.cpp.o.d -o liblibrary.so.p/lib_AppClass.cpp.o -c ../lib/AppClass.cpp",
+    "file": "../lib/AppClass.cpp",
+    "output": "liblibrary.so.p/lib_AppClass.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_GameStateClass.cpp.o -MF liblibrary.so.p/lib_GameStateClass.cpp.o.d -o liblibrary.so.p/lib_GameStateClass.cpp.o -c ../lib/GameStateClass.cpp",
+    "file": "../lib/GameStateClass.cpp",
+    "output": "liblibrary.so.p/lib_GameStateClass.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_RendererClass.cpp.o -MF liblibrary.so.p/lib_RendererClass.cpp.o.d -o liblibrary.so.p/lib_RendererClass.cpp.o -c ../lib/RendererClass.cpp",
+    "file": "../lib/RendererClass.cpp",
+    "output": "liblibrary.so.p/lib_RendererClass.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_KeyboardHandler.cpp.o -MF liblibrary.so.p/lib_KeyboardHandler.cpp.o.d -o liblibrary.so.p/lib_KeyboardHandler.cpp.o -c ../lib/KeyboardHandler.cpp",
+    "file": "../lib/KeyboardHandler.cpp",
+    "output": "liblibrary.so.p/lib_KeyboardHandler.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_Ball.cpp.o -MF liblibrary.so.p/lib_Ball.cpp.o.d -o liblibrary.so.p/lib_Ball.cpp.o -c ../lib/Ball.cpp",
+    "file": "../lib/Ball.cpp",
+    "output": "liblibrary.so.p/lib_Ball.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_Racket.cpp.o -MF liblibrary.so.p/lib_Racket.cpp.o.d -o liblibrary.so.p/lib_Racket.cpp.o -c ../lib/Racket.cpp",
+    "file": "../lib/Racket.cpp",
+    "output": "liblibrary.so.p/lib_Racket.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_ScoreboardRect.cpp.o -MF liblibrary.so.p/lib_ScoreboardRect.cpp.o.d -o liblibrary.so.p/lib_ScoreboardRect.cpp.o -c ../lib/ScoreboardRect.cpp",
+    "file": "../lib/ScoreboardRect.cpp",
+    "output": "liblibrary.so.p/lib_ScoreboardRect.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_RacketRect.cpp.o -MF liblibrary.so.p/lib_RacketRect.cpp.o.d -o liblibrary.so.p/lib_RacketRect.cpp.o -c ../lib/RacketRect.cpp",
+    "file": "../lib/RacketRect.cpp",
+    "output": "liblibrary.so.p/lib_RacketRect.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_BallRect.cpp.o -MF liblibrary.so.p/lib_BallRect.cpp.o.d -o liblibrary.so.p/lib_BallRect.cpp.o -c ../lib/BallRect.cpp",
+    "file": "../lib/BallRect.cpp",
+    "output": "liblibrary.so.p/lib_BallRect.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_Middleline.cpp.o -MF liblibrary.so.p/lib_Middleline.cpp.o.d -o liblibrary.so.p/lib_Middleline.cpp.o -c ../lib/Middleline.cpp",
+    "file": "../lib/Middleline.cpp",
+    "output": "liblibrary.so.p/lib_Middleline.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_Startscreen.cpp.o -MF liblibrary.so.p/lib_Startscreen.cpp.o.d -o liblibrary.so.p/lib_Startscreen.cpp.o -c ../lib/Startscreen.cpp",
+    "file": "../lib/Startscreen.cpp",
+    "output": "liblibrary.so.p/lib_Startscreen.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_Music.cpp.o -MF liblibrary.so.p/lib_Music.cpp.o.d -o liblibrary.so.p/lib_Music.cpp.o -c ../lib/Music.cpp",
+    "file": "../lib/Music.cpp",
+    "output": "liblibrary.so.p/lib_Music.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Iliblibrary.so.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ liblibrary.so.p/lib_SoundEffect.cpp.o -MF liblibrary.so.p/lib_SoundEffect.cpp.o.d -o liblibrary.so.p/lib_SoundEffect.cpp.o -c ../lib/SoundEffect.cpp",
+    "file": "../lib/SoundEffect.cpp",
+    "output": "liblibrary.so.p/lib_SoundEffect.cpp.o"
+  },
+  {
+    "directory": "/home/flori/finalProject/build",
+    "command": "c++ -Igame.p -I. -I.. -I../lib -I/usr/include/SDL2 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/opus -I/usr/include/x86_64-linux-gnu -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/libinstpatch-2 -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -pthread -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 -D_REENTRANT -MD -MQ game.p/main.cpp.o -MF game.p/main.cpp.o.d -o game.p/main.cpp.o -c ../main.cpp",
+    "file": "../main.cpp",
+    "output": "game.p/main.cpp.o"
+  }
+]
