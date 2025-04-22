@@ -48,7 +48,7 @@ int Ball::getVSpeed() const{
     return v_speed;
 }
 
-int Ball::getHSpeed() const{  // Note: name has a typo, see below
+int Ball::getHSpeed() const{
     return h_speed;
 }
 
